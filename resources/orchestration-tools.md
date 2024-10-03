@@ -47,7 +47,7 @@ Here's a list of popular orchestration tools in Python, along with their main re
   
 7. **Hamilton**:
    - **Website**: [Hamilton(https://github.com/dagworks-inc/hamilton)
-   - **Description**: Hamilton helps data scientists and engineers define testable, modular, self-documenting dataflows, that encode lineage/tracing and metadata. Runs and scales everywhere python does. It is a very lightweight "micro" orchestrator -- just needing a python process to run in. You can combine it with any of the above "marco" orchestrators. It comes with a self-hostable UI and lots of plugins for observability, lineage, notebook development, etc.
+   - **Description**: Hamilton helps data scientists and engineers define testable, modular, self-documenting dataflows, that encode lineage/tracing and metadata. Runs and scales everywhere python does. It is a very lightweight "micro" orchestrator -- just needing a python process to run in. You can combine it with any of the above "marco" orchestrators. It comes with a self-hostable UI and lots of plugins for data quality (e.g. with Pandera), observability, lineage, notebook development, etc.
 
 These tools are pivotal in automating and managing data workflows, ensuring efficient and reliable execution of complex data processing tasks.
 
@@ -60,7 +60,7 @@ To choose among Airflow, Luigi, Prefect, Dagster, Argo Workflows, and Hamilton:
 - **Prefect**: Choose for modern, cloud-native workflows with a focus on simplicity and flexibility, especially when you need dynamic task execution and easy debugging.
 - **Dagster**: Best for data-centric workflows, providing a comprehensive view of data pipelines and assets, particularly when data observability is crucial.
 - **Argo Workflows**: Opt for container-native environments, especially when orchestrating machine learning pipelines or data processing tasks on Kubernetes.
-- **Hamilton**: Machines are big enough these days that wrangling the code is more problematic than scheduling tasks to run. Hamilton helps standardize how code is written to enable it to be modular & portable across many contexts. E.g. start in a notebook, transfer to Airflow/Dagster/DBT, run in a web-service, etc. all with minimal to no code changes required. It has plugins and constructs to utilize parallel compute systems like Ray, PySpark, and Dask. Good use cases to start with feature engineering, LLM document processing pipelines, machine learning, and in python based data processing.
+- **Hamilton**: Hamilton is not a replacement for a macro orchestrator. But, machines are big enough these days that wrangling the code is more problematic than scheduling tasks to run. Hamilton helps standardize how code is written to enable it to be modular & portable across many contexts. E.g. start in a notebook, transfer to Airflow/Dagster/DBT, run in a web-service, etc. all with minimal to no code changes required. It has plugins and constructs to utilize parallel compute systems like Ray, PySpark, and Dask. Good use cases to start with feature engineering, LLM document processing pipelines, machine learning, and python based data processing. 
 
 Your choice should align with your specific workflow requirements, infrastructure, and the complexity of the tasks involved.
 
