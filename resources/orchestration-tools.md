@@ -44,18 +44,23 @@ Here's a list of popular orchestration tools in Python, along with their main re
 6. **Argo Workflows**:
    - **Website**: [Argo Workflows](https://argoproj.github.io/workflows/)
    - **Description**: Argo Workflows is an open-source container-native workflow engine for orchestrating parallel jobs on Kubernetes. It's designed to orchestrate large-scale computational tasks, offering powerful features for defining and managing complex workflows.
+  
+7. **Hamilton**:
+   - **Website**: [Hamilton(https://github.com/dagworks-inc/hamilton)
+   - **Description**: Hamilton helps data scientists and engineers define testable, modular, self-documenting dataflows, that encode lineage/tracing and metadata. Runs and scales everywhere python does. It is a very lightweight "micro" orchestrator -- just needing a python process to run in. You can combine it with any of the above "marco" orchestrators. It comes with a self-hostable UI and lots of plugins for observability, lineage, notebook development, etc.
 
 These tools are pivotal in automating and managing data workflows, ensuring efficient and reliable execution of complex data processing tasks.
 
 ## How to choose the right orchestration tool?
 
-To choose among Airflow, Luigi, Prefect, Dagster, and Argo Workflows:
+To choose among Airflow, Luigi, Prefect, Dagster, Argo Workflows, and Hamilton:
 
 - **Airflow**: Ideal for complex, large-scale workflows needing robust scheduling and monitoring. Great for data engineering tasks that require intricate dependency management.
 - **Luigi**: Suitable for batch job workflows, especially in data pipeline scenarios where task dependency is linear and straightforward.
 - **Prefect**: Choose for modern, cloud-native workflows with a focus on simplicity and flexibility, especially when you need dynamic task execution and easy debugging.
 - **Dagster**: Best for data-centric workflows, providing a comprehensive view of data pipelines and assets, particularly when data observability is crucial.
 - **Argo Workflows**: Opt for container-native environments, especially when orchestrating machine learning pipelines or data processing tasks on Kubernetes.
+- **Hamilton**: Machines are big enough these days that wrangling the code is more problematic than scheduling tasks to run. Hamilton helps standardize how code is written to enable it to be modular & portable across many contexts. E.g. start in a notebook, transfer to Airflow/Dagster/DBT, run in a web-service, etc. all with minimal to no code changes required. It has plugins and constructs to utilize parallel compute systems like Ray, PySpark, and Dask. Good use cases to start with feature engineering, LLM document processing pipelines, machine learning, and in python based data processing.
 
 Your choice should align with your specific workflow requirements, infrastructure, and the complexity of the tasks involved.
 
